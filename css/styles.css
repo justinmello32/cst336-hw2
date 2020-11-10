@@ -9,3 +9,7 @@ header, main, nav, footer {
 footer {
 	margin-top: 10rem;
 }
+
+#results {
+	margin-top: 1.5rem;
+}
