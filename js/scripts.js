@@ -5,6 +5,14 @@
 			var betAmount= 0;
 			localStorage.setItem("total_winnings", 0)
 			
+			var slotImages = [
+  				"7",
+  				"coin",
+  				"cherry"
+			];
+			
+
+
 			//Event Listener
 			$("#spin-button").on("click",function(){
 				spinWheel();
