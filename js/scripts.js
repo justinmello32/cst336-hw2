@@ -18,9 +18,20 @@
 
 			//Functions Here
 			function spinWheel() {
-				let winAmount = 0;
-				let win = false;
-				betAmount = $("#bet-amount").val();
+			   let winAmount = 0;
+			   let win = false;
+			   betAmount = $("#bet-amount").val();
+
+
+			   //Error checking for empty value
+			   if(betAmount == 0) {
+			   	alert("You didn't put in a bet, please put in a value");
+			   	die();
+			   }
+			   if(betAmount < 0) {
+			   	alert("You put in a negative value, that doesn't make sense...");
+			   	die();
+			   }
 
                
                var slotMachineImage1 = Math.floor(Math.random()  * slotImages.length);
@@ -39,6 +50,8 @@
              		win = false;
 
              		$("#results").html("Sorry, you did not match any items! Better luck last time!");
+             		$(`#results`).attr("class", "text-danger");
+
                }
 
                //All images match each other, x5 bet amount.
@@ -47,7 +60,8 @@
          			winAmount = betAmount * 5;
          			win = true;
 
-         			$("#results").html("You matched all 3 items! Nice work!, you just won " + winAmount);
+         			$("#results").html("You matched all 3 items! Nice work!, you just won $" + winAmount);
+         			$(`#results`).attr("class", "text-success");
                }
                //There are two items that match each other, x2 bet amount.
                else if(slotMachineImage1 == slotMachineImage2 || slotMachineImage1 == slotMachineImage3 || 
@@ -56,13 +70,14 @@
                		winAmount = betAmount * 2;
                		win = true;
 
-               		$("#results").html("You matched 2 items! Not too shabby! You just won " + winAmount);
+               		$("#results").html("You matched 2 items! Not too shabby! You just won $" + winAmount);
+               		$(`#results`).attr("class", "text-success");
                }
 
 				console.log(winAmount);
 				winnings = +winnings + +winAmount;
 				localStorage.setItem("total_winnings", winAmount);
-				$("#totalWinnings").html(`Total Winnings: ${winnings}`);
+				$("#totalWinnings").html(`Total Winnings: $${winnings}`);
 		}
 
 

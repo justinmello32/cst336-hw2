@@ -1,15 +1,60 @@
+
+/* Overwriting bootstrap elements */
+.jumbotron {
+	background-color: #264653;
+	color: white;
+}
+
+.card-header {
+	background-color: #2A9D8F;
+	color: white;
+}
+
+.card-body li {
+	list-style: none;
+}
+
+.btn-primary {
+    background-color: #E76F51;
+    border-color: #E76F51;
+}
+.btn-primary:hover {
+	background-color: #E9C46A;
+    border-color: #E9C46A;
+}
+
 header, main, nav, footer {
     text-align: center;
 }
 
 #bet-area {
-	margin-top: 1.5rem;
+	margin-top: 5rem;
+}
+
+#bet-area button {
+	margin-top: 1rem;
 }
 
 footer {
 	margin-top: 10rem;
+	background-color: #264653;
+	color: white;
+}
+footer a {
+	color: #E76F51;
+}
+
+img {
+	border-radius: 20px;
+	background-color: bisque;
 }
 
 #results {
 	margin-top: 1.5rem;
+	font-size: 25px;
+}
+#totalWinnings {
+	margin-top: 5px;
+	font-size: 30px;
+	font-weight: bold;
 }
